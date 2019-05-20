@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>NAV</title>
+    <meta name="description" content="整理了非常优秀的前端开发网站，并提供相关行业的网站网址。">
+    <meta name="keywords" content="前端网址导航">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+    <div id="app">
+        <header class="jumbotron text-center">
+            <div class="container">
+                <h1><a href="">NAV</a></h1>
+                <p>前端网址导航</p>
+            </div>
+        </header>
+        <section id="navbar-example" class="main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-2 hidden-xs">
+                        <div class="nav nav-pills flex-column pinned">
+                            <a v-for="(list,index) in lists" class="nav-link" :href="'#n'+index">{{list.name}}</a>
+                        </div>
+                    </div>
+                    <div class="col-sm-10">
+                        <div class="page-header">
+                            <h2 class="h4">推荐</h2>
+                        </div>
+                        <div class="row">
+                            <template v-for="(list,index) in lists">
+                                <div v-for="l in list.url" class="col-sm-3" v-if="l.bool">
+                                    <div class="card">
+                                        <a :href="l.link" target="_blank"
+                                            :class="{'active':l.bool}"
+                                            data-toggle="tooltip" data-placement="bottom"
+                                            :title="l.description">
+                                            <h4 class="list-group-item-heading h6">
+                                                <i v-if="l.bool" class="fa fa-bookmark text-danger"></i>
+                                                {{l.title}}
+                                            </h4>
+                                            <p hidden class="list-group-item-link">{{l.link}}</p>
+                                            <p class="list-group-item-text mb-0">{{l.description}}</p>
+                                            <img hidden class="card-img-bottom" :src="imgapi+l.link" :alt="l.title">
+                                        </a>
+                                    </div>
+                                </div>
+                            </template>
+                        </div>
+                        
+                        <div v-for="(list,index) in lists" :id="'n'+index">
+                            <div class="page-header">
+                                <h2 class="h4">{{list.name}}</h2>
+                            </div>
+                            <div class="row">
+                                <div v-for="l in list.url" class="col-sm-3">
+                                    <div class="card">
+                                        <a :href="l.link" target="_blank"
+                                            :class="{'active':l.bool}"
+                                            data-toggle="tooltip" data-placement="bottom"
+                                            :title="l.description">
+                                            <h4 class="list-group-item-heading h6">
+                                                <i v-if="l.bool" class="fa fa-bookmark text-danger"></i>
+                                                {{l.title}}
+                                            </h4>
+                                            <p hidden class="list-group-item-link">{{l.link}}</p>
+                                            <p class="list-group-item-text mb-0">{{l.description}}</p>
+                                            <img hidden class="card-img-bottom" :src="imgapi+l.link" :alt="l.title">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container">
+                &copy; 盛邦升华 <a href="http://sbsh.me">sbsh.me</a> 2017/12/13
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/1.3.4/vue-resource.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://cdn.bootcss.com/popper.js/1.15.0/umd/popper.min.js"></script>
+    <script src="https://cdn.bootcss.com/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery.pin/1.0.1/jquery.pin.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+
+</html>

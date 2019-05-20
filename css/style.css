@@ -1,0 +1,113 @@
+@charset "UTF-8";
+
+/*滚动监听 scrollspy.js*/
+body {
+    position: relative;
+}
+
+/*“钉”住某个元素 jQuery.Pin*/
+.pinned {
+    margin-top: 40px;
+}
+
+h1 small {
+    display: block;
+}
+
+.jumbotron {
+    background-color: #286090;
+    color: #fff;
+}
+
+.jumbotron a {
+    color: #fff;
+}
+
+header {
+    height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    margin-bottom: 50px;
+}
+
+.card{
+    margin-bottom: 30px;
+    transition: .25s;
+}
+
+.card:hover{
+    transform: translateY(-5px);
+}
+
+.card a{
+    display: block;
+    text-decoration: none;
+    padding: 1.25rem;
+    color: #000000;
+}
+
+.card h4{
+    overflow: hidden;
+    /*单行文本省略号*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.card-img-bottom{
+    height: 100px;
+}
+
+.list-group-item.active:hover, .list-group-item.active:focus {
+    background-color: #286090;
+    border-color: #286090;
+}
+
+.list-group-item-heading {
+    margin-bottom: 0;
+}
+
+.list-group-item-link {
+    margin-bottom: 5px;
+    overflow: hidden;
+    /*单行文本省略号*/
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.list-group-item-text {
+    font-size: 14px;
+    overflow: hidden;
+    /*多行文本省略号（最多两行描述）*/
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    color: #999999;
+}
+
+.list-group-item-img {
+    max-width: 100%;
+    display: block;
+    margin: auto;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer a {
+    color: #fff;
+}
+
+footer a:hover {
+    color: #fff;
+}
