@@ -20,6 +20,12 @@
           "link": "https://jsfiddle.net/",
           "description": "前端在线调试工具",
           "bool": false
+        },
+        {
+          "title": "Browsersync",
+          "link": "https://www.browsersync.io/",
+          "description": "省时的浏览器同步测试工具",
+          "bool": true
         }
       ]
     },
